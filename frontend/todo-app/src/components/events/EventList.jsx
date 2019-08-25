@@ -33,20 +33,20 @@ class EventList extends React.Component<> {
                 eventDate: new Date(),
                 start: new Date().toLocaleTimeString(),
                 end: new Date().toLocaleTimeString(),
-                name: 'Struc. Programming',
+                name: 'Struc. Prog.',
                 location: '12.10.11',
                 organiser: organisers.csit,
-                description: 'Make Tim W. proud. P.s python sucks lol',
+                description: 'Make Tim W. proud. P.s python sucks ><',
                 imageURL: 'https://sportslinkt-images.s3-ap-southeast-2.amazonaws.com/profile_410_600.jpg'
             }, {
                 id: 'abcdg',
                 eventDate: new Date(),
                 start: new Date(1).toLocaleTimeString(),
                 end: new Date().toLocaleTimeString(),
-                name: "Mili is da best",
+                name: "Mili is da best!!!!",
                 location: '80.06.11',
                 organiser: organisers.tpc,
-                description: 'Story of an amazing hooman >,<',
+                description: 'Story of an amazing hooman ~>,<~ ',
                 imageURL: 'https://sportslinkt-images.s3-ap-southeast-2.amazonaws.com/profile_410_600.jpg'
             }
         ]
