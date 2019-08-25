@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 //import SecondComponent from './components/learning-examples/SecondComponent'
 //import ThirdComponent from './components/learning-examples/ThirdComponent'
 //import Counter from './components/counter/Counter'
-import TodoApp from './components/todo/TodoApp'
+import TodoApp from './components/todo/TodoApp';
+import EventFeed from './components/events/EventFeed';
 import './App.css';
 import './bootstrap.css';
 
@@ -13,6 +14,7 @@ class App extends Component {
       <div className="App">
         {/*<Counter/>*/}
         <TodoApp />
+        <EventFeed/>
       </div>
     );
   }
