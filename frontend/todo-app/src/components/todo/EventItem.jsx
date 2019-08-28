@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import '../event.css';
 //one event item being displayed
-class EventItem extends React.Component<> {
+class EventItem extends Component {
 
     render() {
         return (

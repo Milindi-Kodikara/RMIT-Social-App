@@ -1,3 +1,7 @@
 .DS_Store
 .idea
 .vscode
+.classpath
+.project
+.settings
+frontend/todo-app/node_modules

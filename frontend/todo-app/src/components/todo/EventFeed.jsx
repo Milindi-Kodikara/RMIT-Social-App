@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import EventList from "./EventList";
-import '../event.css';
 
-class EventFeed extends React.Component<> {
+class EventFeed extends Component {
 
     constructor(props) {
         super(props);

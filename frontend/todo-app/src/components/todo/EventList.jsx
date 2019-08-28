@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import EventItem from './EventItem';
-import '../event.css';
 
 //List of events
-class EventList extends React.Component<> {
+class EventList extends Component {
 
     constructor(props) {
         super(props);
