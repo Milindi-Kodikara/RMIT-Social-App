@@ -5,6 +5,7 @@ import Meta from "antd/lib/card/Meta";
 import Col from "antd/es/grid/col";
 import Row from "antd/lib/grid/row";
 import Descriptions from "antd/lib/descriptions";
+import Button from "antd/lib/button";
 
 interface EventDetailProps {
     // id:string,
@@ -19,14 +20,17 @@ interface EventDetailProps {
 }
 
 interface EventDetailState {
-
+    registered: boolean;
 }
+
 
 class EventDetail extends Component <EventDetailProps, EventDetailState> {
 
     constructor(props: EventDetailProps) {
         super(props);
-        this.state = {}
+        this.state = {
+            registered: false,
+        }
     }
 
     render() {
@@ -66,17 +70,29 @@ class EventDetail extends Component <EventDetailProps, EventDetailState> {
                                  style={{width: "100%", height: "auto", position: "absolute", marginTop: "-500px"}}/>
                         </div>}
                     >
-                        <Meta title={events.name} description={events.description}/>
+                        <Row>
+                            <Col span={16}>
+                                <Meta title={events.name} description={events.description}/>
+                            </Col>
+                            <Col span={8}>
+                            <Button type="primary" block onClick={() => {
+                                this.setState({registered: !this.state.registered})
+                            }}>{this.state.registered ? " Cancel " : "Register"}
+                            </Button>
+                            </Col>
+                        </Row>
                         <Descriptions title="Info" style={{marginTop: "50px"}}>
                             <Descriptions.Item label="Organiser">{events.organiser}</Descriptions.Item>
-                            <Descriptions.Item > </Descriptions.Item>
-                            <Descriptions.Item > </Descriptions.Item>
+                            <Descriptions.Item> </Descriptions.Item>
+                            <Descriptions.Item> </Descriptions.Item>
                             <Descriptions.Item label="Location">{events.location}</Descriptions.Item>
-                            <Descriptions.Item > </Descriptions.Item>
-                            <Descriptions.Item > </Descriptions.Item>
-                            <Descriptions.Item label="Start time">{events.start.toLocaleString('en-GB', options)}</Descriptions.Item>
-                            <Descriptions.Item label="End time">{events.end.toLocaleString('en-GB', options)}</Descriptions.Item>
-                            <Descriptions.Item > </Descriptions.Item>
+                            <Descriptions.Item> </Descriptions.Item>
+                            <Descriptions.Item> </Descriptions.Item>
+                            <Descriptions.Item
+                                label="Start time">{events.start.toLocaleString('en-GB', options)}</Descriptions.Item>
+                            <Descriptions.Item
+                                label="End time">{events.end.toLocaleString('en-GB', options)}</Descriptions.Item>
+                            <Descriptions.Item> </Descriptions.Item>
                         </Descriptions>
                     </Card>
                 </Col>

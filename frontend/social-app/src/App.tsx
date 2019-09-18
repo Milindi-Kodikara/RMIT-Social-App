@@ -10,6 +10,7 @@ import Login from "./Screens/Login";
 import CreateEvent from "./Containers/CreateEvent";
 import EventDetail from "./Screens/EventDetails";
 import AuthenticatedRoute from "./Screens/AuthenticatedRoute";
+import LogoutComponent from "./Screens/LogoutComponent";
 const {Header, Footer} = Layout;
 
 const App: React.FC = () => {
@@ -27,7 +28,7 @@ const App: React.FC = () => {
                     <Menu.Item key="4" style={{float: "right"}}><Link to={"/login"}>LogIn</Link></Menu.Item>
                     <Menu.Item key="5" style={{float: "right"}}><Link to={"/profile"}>Profile</Link></Menu.Item>
                     <Menu.Item key="6" style={{float: "right"}}><Link to={"/createEvent"}><Button type={"primary"}>+</Button></Link></Menu.Item>
-                    {/*temp event details page until nav is made*/}
+                    {/*temp event details page until proper nav is made*/}
                     <Menu.Item key="7"><Link to={"/eventDetails"}>Event Details</Link></Menu.Item>
                 </Menu>
             </Header>
@@ -40,6 +41,7 @@ const App: React.FC = () => {
                 <AuthenticatedRoute path="/profile" component={Profile}/>
                 <AuthenticatedRoute path="/createEvent" component={CreateEvent}/>
                 <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
+                <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
             </Switch>
             <Footer>Group 33</Footer>
         </Layout>
