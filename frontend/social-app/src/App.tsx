@@ -43,7 +43,7 @@ const App: React.FC = () => {
                 <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
                 <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
             </Switch>
-            <Footer>Group 33</Footer>
+            <Footer> Created by Jack Kelly | Jono Diver | Luke Shusher | Milindi Kodikara | Sheryl Mantik of Group 33!</Footer>
         </Layout>
         </Router>
     );
