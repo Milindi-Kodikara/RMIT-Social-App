@@ -15,8 +15,7 @@ interface EventDetailState {
     registered: boolean;
 }
 
-//need to read in the event details from the database
-
+//have to read the details from the database
 class EventDetail extends Component <EventDetailProps, EventDetailState> {
 
     constructor(props: EventDetailProps) {

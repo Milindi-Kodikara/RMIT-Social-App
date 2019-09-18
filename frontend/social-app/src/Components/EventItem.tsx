@@ -44,7 +44,7 @@ export default class EventItem extends React.Component<EventItemProps, EventItem
                     actions={[
                         <p><Icon type="environment"/> {this.props.location}</p>,
                         <p><Icon type="clock-circle"/> {this.props.start.toLocaleString('en-GB', options)}</p>,
-                        //to go to the more detailed page
+                        //need to do the router stuff here properly
                         <Link to={"eventDetails/".concat(this.props.id)}><Icon type="ellipsis"/></Link>,
                     ]}
                 >
