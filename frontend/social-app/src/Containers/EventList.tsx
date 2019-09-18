@@ -70,6 +70,7 @@ class EventList extends Component<EventListProps, EventListState> {
                     description={event.description}
                     navigateToEventDetails={(eventID:string) => {}}
                     location={event.location}
+                    url={event.imageURL}
                     imageURL={<img className="image" src={event.imageURL}/>}
                 />)}
 
