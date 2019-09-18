@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import EventItem from "../Components/EventItem";
 
 interface EventListProps{
-
 }
 
 interface EventListState{
@@ -68,7 +67,6 @@ class EventList extends Component<EventListProps, EventListState> {
                     end={event.end}
                     organiser={event.organiser}
                     description={event.description}
-                    navigateToEventDetails={(eventID:string) => {}}
                     location={event.location}
                     url={event.imageURL}
                     imageURL={<img className="image" src={event.imageURL}/>}

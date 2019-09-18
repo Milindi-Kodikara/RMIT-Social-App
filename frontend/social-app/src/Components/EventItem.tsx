@@ -1,5 +1,6 @@
 import React from 'react';
 import {Skeleton, Switch, Card, Icon, Avatar} from 'antd';
+import {Link} from "react-router-dom";
 
 const {Meta} = Card;
 
@@ -14,9 +15,6 @@ interface EventItemProps {
     location: string;
     colour: string;
     organiser: string;
-
-    navigateToEventDetails(eventID: string): void
-
 }
 
 interface EventItemState {
@@ -47,7 +45,7 @@ export default class EventItem extends React.Component<EventItemProps, EventItem
                         <p><Icon type="environment"/> {this.props.location}</p>,
                         <p><Icon type="clock-circle"/> {this.props.start.toLocaleString('en-GB', options)}</p>,
                         //to go to the more detailed page
-                        <Icon type="ellipsis" onClick={() => this.props.navigateToEventDetails(this.props.id)}/>,
+                        <Link to={"eventDetails/".concat(this.props.id)}><Icon type="ellipsis"/></Link>,
                     ]}
                 >
                     <Skeleton loading={!loading} avatar active>

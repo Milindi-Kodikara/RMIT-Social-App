@@ -8,21 +8,14 @@ import Descriptions from "antd/lib/descriptions";
 import Button from "antd/lib/button";
 
 interface EventDetailProps {
-    // id:string,
-    // imageURL: object,
-    // url: string,
-    // name:string
-    // organiser:string,
-    // description: string,
-    // location: string,
-    // start: string,
-    // end: string,
+    eventID:string,
 }
 
 interface EventDetailState {
     registered: boolean;
 }
 
+//need to read in the event details from the database
 
 class EventDetail extends Component <EventDetailProps, EventDetailState> {
 
