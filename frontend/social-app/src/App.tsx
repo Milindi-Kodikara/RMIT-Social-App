@@ -9,6 +9,7 @@ import Profile from "./Screens/Profile";
 import Login from "./Screens/Login";
 import CreateEvent from "./Containers/CreateEvent";
 import EventDetail from "./Screens/EventDetails";
+import AuthenticatedRoute from "./Screens/AuthenticatedRoute";
 const {Header, Footer} = Layout;
 
 const App: React.FC = () => {
@@ -19,7 +20,7 @@ const App: React.FC = () => {
                 <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={['1']}>
+                    defaultSelectedKeys={['4']}>
                     <Menu.Item key="1"><Link to={"/feed"}>Feed</Link></Menu.Item>
                     <Menu.Item key="2"><Link to={"/search"}>Search</Link></Menu.Item>
                     <Menu.Item key="3"><Link to={"/calendar"}>Calendar</Link></Menu.Item>
@@ -31,13 +32,14 @@ const App: React.FC = () => {
                 </Menu>
             </Header>
             <Switch>
-                <Route path="/feed" component={Feed}/>
-                <Route path="/login" component={Login}/>
-                <Route path="/search" component={Search}/>
-                <Route path="/calendar" component={Calendar}/>
-                <Route path="/profile" component={Profile}/>
-                <Route path="/createEvent" component={CreateEvent}/>
-                <Route path="/eventDetails" component={EventDetail}/>
+                <Route path="/" exact component={Login}/>
+                <AuthenticatedRoute path="/feed" component={Feed}/>
+                <AuthenticatedRoute path="/login" component={Login}/>
+                <AuthenticatedRoute path="/search" component={Search}/>
+                <AuthenticatedRoute path="/calendar" component={Calendar}/>
+                <AuthenticatedRoute path="/profile" component={Profile}/>
+                <AuthenticatedRoute path="/createEvent" component={CreateEvent}/>
+                <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
             </Switch>
             <Footer>Group 33</Footer>
         </Layout>

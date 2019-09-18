@@ -84,19 +84,6 @@ class EventDetail extends Component <EventDetailProps, EventDetailState> {
             </Row>
         )
         return div;
-        {/*{"#FF0001"}*/
-        }
-        {/*{events.start}*/
-        }
-        {/*{events.end}*/
-        }
-        {/*{events.organiser}*/
-        }
-        {/*{events.location}*/
-        }
-        {/**/
-        }
-
     }
 }
 
