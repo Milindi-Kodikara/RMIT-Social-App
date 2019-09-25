@@ -10,60 +10,36 @@ import Login from "./Screens/Login";
 import EventDetail from "./Screens/EventDetails";
 import AuthenticatedRoute from "./Screens/AuthenticatedRoute";
 import LogoutComponent from "./Screens/LogoutComponent";
-import { Modal } from 'antd';
+import { Modal, Form, Input, Radio } from 'antd';
+import CreateEventModal from "./Components/CreateEventModal";
+
 const {Header, Footer} = Layout;
 
 class App extends Component {
 
     state = {
-    ModalText: 'Content of the modal',
     visible: false,
-    confirmLoading: false,
   };
 
   showModal = () => {
-    this.setState({
-      visible: true,
-    });
-  };
-
-  handleOk = () => {
-    this.setState({
-      ModalText: 'A new event has been created!',
-      confirmLoading: true,
-    });
-
-    setTimeout(() => {
-      this.setState({
-        visible: false,
-        confirmLoading: false,
-      });
-    }, 2000);
+    this.setState({ visible: true });
   };
 
   handleCancel = () => {
-    console.log('Clicked cancel button');
-    this.setState({
-      visible: false,
-    });
+    this.setState({ visible: false });
   };
 
+  handleCreate = (id: string, name: string) => {
+      this.setState({ visible: false });
+      // create event i.e add stuff to the database
+      // refresh page maybe
+      const event = {id, name};
+  };
 
     render() {
-        const { visible, confirmLoading, ModalText } = this.state;
         return (
             <div>
-                {/*create event stuff goes here*/}
-                <Modal
-                title="Create new event"
-                visible={visible}
-                onOk={this.handleOk}
-                confirmLoading={confirmLoading}
-                onCancel={this.handleCancel}
-        >
-          <p>{ModalText}</p>
-        </Modal>
-
+                <CreateEventModal visible={this.state.visible} handleCreate={this.handleCreate} handleCancel={this.handleCancel} />
                 <Router>
                     <Layout style={{minHeight: "100vh"}}>
                         <Header className="header" style={{paddingTop: "10px"}}>
@@ -77,10 +53,11 @@ class App extends Component {
                                 <Menu.Item key="4" style={{float: "right"}}><Link to={"/login"}>LogIn</Link></Menu.Item>
                                 <Menu.Item key="5" style={{float: "right"}}><Link
                                     to={"/profile"}>Profile</Link></Menu.Item>
-                                <Button style={{float: "right", marginTop: "5px"}} type="primary" onClick={this.showModal}>+
+                                <Button style={{float: "right", marginTop: "5px"}} type="primary"
+                                        onClick={this.showModal}>+
                                 </Button>
                                 {/*temp event details page until proper nav is made*/}
-                               <Link to={"/eventDetails"}></Link>
+                                <Link to={"/eventDetails"}></Link>
                             </Menu>
                         </Header>
                         <Switch>

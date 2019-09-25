@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import EventItem from "../Components/EventItem";
 
 interface EventListProps{
+
 }
 
 interface EventListState{
