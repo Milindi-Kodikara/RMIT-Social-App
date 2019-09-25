@@ -5,7 +5,6 @@ import Button from "antd/lib/button";
 import Feed from "./Screens/Feed";
 import Search from "./Screens/Search";
 import Calendar from "./Screens/Calendar";
-import Profile from "./Screens/Profile";
 import Login from "./Screens/Login";
 import EventDetail from "./Screens/EventDetails";
 import AuthenticatedRoute from "./Screens/AuthenticatedRoute";
@@ -51,9 +50,7 @@ class App extends Component {
                                 <Menu.Item key="2"><Link to={"/search"}>Search</Link></Menu.Item>
                                 <Menu.Item key="3"><Link to={"/calendar"}>Calendar</Link></Menu.Item>
                                 <Menu.Item key="4" style={{float: "right"}}><Link to={"/login"}>LogIn</Link></Menu.Item>
-                                <Menu.Item key="5" style={{float: "right"}}><Link
-                                    to={"/profile"}>Profile</Link></Menu.Item>
-                                <Button style={{float: "right", marginTop: "5px"}} type="primary"
+                                <Button style={{float: "right", marginTop: "5px", marginRight: "10px"}} type="primary"
                                         onClick={this.showModal}>+
                                 </Button>
                                 {/*temp event details page until proper nav is made*/}
@@ -66,7 +63,6 @@ class App extends Component {
                             <AuthenticatedRoute path="/login" component={Login}/>
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/calendar" component={Calendar}/>
-                            <AuthenticatedRoute path="/profile" component={Profile}/>
                             <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                         </Switch>
