@@ -13,6 +13,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sept.rest.webservices.restfulwebservices.jwt.JwtInMemoryUserDetailsService;
 import com.sept.rest.webservices.restfulwebservices.jwt.JwtTokenUtil;
 import com.sept.rest.webservices.restfulwebservices.jwt.JwtUserDetails;
 
@@ -38,7 +38,7 @@ public class JwtAuthenticationRestController {
   private JwtTokenUtil jwtTokenUtil;
 
   @Autowired
-  private JwtInMemoryUserDetailsService jwtInMemoryUserDetailsService;
+  private UserDetailsService jwtInMemoryUserDetailsService;
 
   @RequestMapping(value = "${jwt.get.token.uri}", method = RequestMethod.POST)
   public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtTokenRequest authenticationRequest)
@@ -67,11 +67,6 @@ public class JwtAuthenticationRestController {
       return ResponseEntity.badRequest().body(null);
     }
   }
-  
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ResponseEntity<?> saveUser(@RequestBody JwtUserDetails user) throws Exception {
-		return ResponseEntity.ok(jwtInMemoryUserDetailsService.save(user));
-	}
 
   @ExceptionHandler({ AuthenticationException.class })
   public ResponseEntity<String> handleAuthenticationException(AuthenticationException e) {
