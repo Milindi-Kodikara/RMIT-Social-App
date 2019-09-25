@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import {Avatar, Card, Icon, Skeleton} from "antd";
 import Meta from "antd/lib/card/Meta";
-import Col from "antd/es/grid/col";
-import Row from "antd/lib/grid/row";
 import Descriptions from "antd/lib/descriptions";
-import Button from "antd/lib/button";
 
 interface ProfileOverviewProps {
 }
@@ -21,6 +18,7 @@ class Profile extends Component <ProfileOverviewProps, ProfileOverviewState> {
 
     render() {
 
+        //dummy profile, need to read in from the backend
         let profile = {
             id: 'abcde',
             name: 'Wombat da sok',
