@@ -16,6 +16,10 @@ class NormalLoginForm extends React.Component {
         }
     }
 
+    register = e => {
+        this.props.history.push("/register");
+    }
+
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -27,8 +31,8 @@ class NormalLoginForm extends React.Component {
                         AuthenticationService.registerSuccessfulLoginForJwt(values.username, response.data.token);
                         this.props.history.push("/feed");
                     }).catch((e) => {
-                        console.log('Error with login!');
-                        console.error(e)
+                    console.log('Error with login!');
+                    console.error(e)
                 })
             }
         });
@@ -63,7 +67,7 @@ class NormalLoginForm extends React.Component {
                             )}
                         </Form.Item>
                         <Form.Item>
-                            <a href="./register">Register now!</a>
+                            <a href="/register" onClick={this.register}>Register now!</a>
                         </Form.Item>
                         <Form.Item>
                             <div style={{alignItems: "center"}}>

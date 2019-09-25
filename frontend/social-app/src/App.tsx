@@ -67,6 +67,7 @@ class App extends Component {
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/calendar" component={Calendar}/>
                             <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
+                            <AuthenticatedRoute path="/register" component={Register}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                         </Switch>
                         <Footer> Created by Jack Kelly | Jono Diver | Luke Shusher | Milindi Kodikara | Sheryl Mantik of

@@ -89,7 +89,6 @@ class CreateEventModal extends React.Component<CreateEventModalProps, {}> {
                     </Upload>
                     )}
                 </Form.Item>
-
             </Form>
         </Modal>
 
