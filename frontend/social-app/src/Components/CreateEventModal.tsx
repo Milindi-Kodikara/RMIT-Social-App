@@ -7,7 +7,7 @@ interface CreateEventModalProps {
 
     handleCancel(): void,
 
-    handleCreate(id: string, name: string): void,
+    handleCreate(name: string, description: string, location: string, time: Date, org: string, img: object): void,
 
     form: any
 }
@@ -26,7 +26,6 @@ class CreateEventModal extends React.Component<CreateEventModalProps, {}> {
                 authorization: 'authorization-text',
             }
         };
-
         return <Modal
             visible={this.props.visible}
             title="Create a new event"
@@ -41,7 +40,7 @@ class CreateEventModal extends React.Component<CreateEventModalProps, {}> {
                     console.log('Received values of form: ', values);
                     form.resetFields();
                     //send the values to app
-                    this.props.handleCreate(values.id, values.name);
+                    this.props.handleCreate(values.name, values.description, values.location, values.rangeTimeValue, values.org, values.img);
                 });
             }}
         >

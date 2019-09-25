@@ -29,11 +29,11 @@ class App extends Component {
     this.setState({ visible: false });
   };
 
-  handleCreate = (id: string, name: string) => {
+  handleCreate = (name: string, description: string, location: string, time: Date, org: string, img: object) => {
       this.setState({ visible: false });
       // create event i.e add stuff to the database
-      // refresh page maybe
-      const event = {id, name};
+      // refresh page maybe to load events
+      const event = {name, description, location, time, org, img};
   };
 
     render() {
