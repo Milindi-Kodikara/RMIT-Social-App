@@ -2,6 +2,9 @@ matrix:
   include:
     - language: java
       jdk: oraclejdk11
+      env:
+      # Make sure gcloud command is on our PATH and the App Engine SDK is in the Python path
+      - GAEJAVAPATH=${HOME}/.cache/google_appengine PATH=$PATH:${HOME}/google-cloud-sdk/bin JAVAPATH=${JAVAPATH}:${GAEJAVAPATH} CLOUDSDK_CORE_DISABLE_PROMPTS=1
       install:
         - gcloud config set project septfans
         - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
