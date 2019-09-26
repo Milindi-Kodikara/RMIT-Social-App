@@ -25,4 +25,4 @@ matrix:
       before_install:
         - cd ./frontend/social-app
       script:
-        - npm start
+        - npm run
