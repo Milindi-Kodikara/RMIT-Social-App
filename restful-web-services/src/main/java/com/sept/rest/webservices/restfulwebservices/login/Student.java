@@ -1,4 +1,4 @@
-package com.sept.rest.webservices.restfulwebservices.model;
+package com.sept.rest.webservices.restfulwebservices.login;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
