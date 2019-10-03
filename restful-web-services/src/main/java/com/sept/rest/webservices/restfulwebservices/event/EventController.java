@@ -48,7 +48,7 @@ public class EventController {
 	}
 
 	@DeleteMapping("/{username}/events/{id}")
-	public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) {
+	public ResponseEntity<Void> deleteEvent(@PathVariable String username, @PathVariable long id) {
 
 		eventRepo.deleteById((int) id);
 
