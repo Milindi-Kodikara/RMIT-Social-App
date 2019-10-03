@@ -34,7 +34,7 @@ const App: React.FC = () => {
             </Header>
             <Switch>
                 <Route path="/" exact component={Login}/>
-                <AuthenticatedRoute path="/feed" component={Feed}/>
+                <AuthenticatedRoute path="/events" component={Feed}/>
                 <AuthenticatedRoute path="/login" component={Login}/>
                 <AuthenticatedRoute path="/search" component={Search}/>
                 <AuthenticatedRoute path="/calendar" component={Calendar}/>

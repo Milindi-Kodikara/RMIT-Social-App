@@ -19,11 +19,12 @@ class NormalLoginForm extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values, this.state);
+                console.log('Received values of form: ', values);
                 AuthenticationService
                     .executeJwtAuthenticationService(values.username, values.password)
                     .then((response) => {
-                        AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, response.data.token);
+                        AuthenticationService.registerSuccessfulLoginForJwt(values.username, response.data.token);
+                        console.log(response.data.token)
                         this.props.history.push("/feed");
                     }).catch((e) => {
                         console.log('Error with login!');
