@@ -6,15 +6,16 @@ const {Meta} = Card;
 
 interface EventItemProps {
     id: string;
-    imageURL: object,
-    url: string,
-    start: Date;
-    end: Date;
-    name: string;
-    description: string;
+    username: string,
+    name: string,
+    image: object,
     location: string;
-    colour: string;
+    startTime: Date;
+    finishTime: Date;
     organiser: string;
+    description: string;
+    imgURL: string,
+    colour: string;
 }
 
 interface EventItemState {
@@ -43,7 +44,7 @@ export default class EventItem extends React.Component<EventItemProps, EventItem
                     style={{margin: 25}}
                     actions={[
                         <p><Icon type="environment"/> {this.props.location}</p>,
-                        <p><Icon type="clock-circle"/> {this.props.start.toLocaleString('en-GB', options)}</p>,
+                        <p><Icon type="clock-circle"/> {this.props.startTime.toLocaleString('en-GB', options)}</p>,
                         //need to do the router stuff here properly
                         <Link to={"eventDetails/".concat(this.props.id)}><Icon type="ellipsis"/></Link>,
                     ]}
@@ -51,7 +52,7 @@ export default class EventItem extends React.Component<EventItemProps, EventItem
                     <Skeleton loading={!loading} avatar active>
                         <Meta
                             avatar={
-                                <Avatar src={this.props.url}/>
+                                <Avatar src={this.props.imgURL}/>
                             }
                             title={this.props.name}
                             description={this.props.organiser}
