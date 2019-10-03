@@ -70,7 +70,7 @@ class App extends Component {
                             <AuthenticatedRoute path="/register" component={Register}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                         </Switch>
-                        <Footer> Created by Jack Kelly | Jono Diver | Luke Shusher | Milindi Kodikara | Sheryl Mantik of
+                        <Footer> Created by Jack Kelly | Jono Diver | Luke Shuster | Milindi Kodikara | Sheryl Mantik of
                             Group 33!</Footer>
                     </Layout>
                 </Router>
