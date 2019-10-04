@@ -7,7 +7,7 @@ class EventDataService {
     showAllEvents(){
         //console.log('executed service')
         AuthenticationService.isUserLoggedIn();
-        return axios.get("${API_URL}/events");
+        return axios.get("http://localhost:4200/events");
     }
 
     // showEvent(id) {
@@ -22,4 +22,3 @@ class EventDataService {
 }
 
 export default new EventDataService()
-
