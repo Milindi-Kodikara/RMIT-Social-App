@@ -15,40 +15,67 @@ import Profile from "./Containers/Profile";
 
 const {Header, Footer} = Layout;
 
-const App: React.FC = () => {
-    return (
-        <Router>
-        <Layout style={{minHeight: "100vh"}}>
-            <Header className="header" style={{paddingTop: "10px"}}>
-                <Menu
-                    theme="dark"
-                    mode="horizontal"
-                    defaultSelectedKeys={['4']}>
-                    <Menu.Item key="1"><Link to={"/feed"}>Feed</Link></Menu.Item>
-                    <Menu.Item key="2"><Link to={"/search"}>Search</Link></Menu.Item>
-                    <Menu.Item key="3"><Link to={"/calendar"}>Calendar</Link></Menu.Item>
-                    <Menu.Item key="4" style={{float: "right"}}><Link to={"/login"}>LogIn</Link></Menu.Item>
-                    <Menu.Item key="5" style={{float: "right"}}><Link to={"/profile"}>Profile</Link></Menu.Item>
-                    <Menu.Item key="6" style={{float: "right"}}><Link to={"/createEvent"}><Button type={"primary"}>+</Button></Link></Menu.Item>
-                    {/*temp event details page until proper nav is made*/}
-                    <Menu.Item key="7"><Link to={"/eventDetails"}>Event Details</Link></Menu.Item>
-                </Menu>
-            </Header>
-            <Switch>
-                <Route path="/" exact component={Login}/>
-                <AuthenticatedRoute path="/events" component={Feed}/>
-                <AuthenticatedRoute path="/login" component={Login}/>
-                <AuthenticatedRoute path="/search" component={Search}/>
-                <AuthenticatedRoute path="/calendar" component={Calendar}/>
-                <AuthenticatedRoute path="/profile" component={Profile}/>
-                <AuthenticatedRoute path="/createEvent" component={CreateEventModal}/>
-                <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
-                <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
-            </Switch>
-            <Footer> Created by Jack Kelly | Jono Diver | Luke Shusher | Milindi Kodikara | Sheryl Mantik of Group 33!</Footer>
-        </Layout>
-        </Router>
-    );
-}
+class App extends Component {
 
-export default App;
+    state = {
+        visible: false,
+    };
+
+    showModal = () => {
+        this.setState({visible: true});
+    };
+
+    handleCancel = () => {
+        this.setState({visible: false});
+    };
+
+    handleCreate = (name: string, description: string, location: string, time: Date, org: string, img: object) => {
+        this.setState({visible: false});
+        // create event i.e add stuff to the database
+        // refresh page maybe to load events
+        const event = {name, description, location, time, org, img};
+    };
+
+    render() {
+        return (
+            <div>
+
+                <CreateEventModal visible={this.state.visible} handleCreate={this.handleCreate}
+                                  handleCancel={this.handleCancel}/>
+                <Router>
+                    <Layout style={{minHeight: "100vh"}}>
+                        <Header className="header" style={{paddingTop: "10px"}}>
+                            <Menu
+                                theme="dark"
+                                mode="horizontal"
+                            >
+                                <Menu.Item key="1"><Link to={"/feed"}>Feed</Link></Menu.Item>
+                                <Menu.Item key="2"><Link to={"/search"}>Search</Link></Menu.Item>
+                                <Menu.Item key="3"><Link to={"/calendar"}>Calendar</Link></Menu.Item>
+                                <Menu.Item key="4" style={{float: "right"}}><Link
+                                    to={"/logout"}>LogOut</Link></Menu.Item>
+                                <Button style={{float: "right", marginTop: "5px", marginRight: "10px"}} type="primary"
+                                        onClick={this.showModal}>+
+                                </Button>
+                                {/*temp event details page until proper nav is made*/}
+                            </Menu>
+                        </Header>
+                        <Switch>
+                            <Route path="/" exact component={Login}/>
+                            <AuthenticatedRoute path="/events" component={Feed}/>
+                            <AuthenticatedRoute path="/login" component={Login}/>
+                            <AuthenticatedRoute path="/search" component={Search}/>
+                            <AuthenticatedRoute path="/calendar" component={Calendar}/>
+                            <AuthenticatedRoute path="/profile" component={Profile}/>
+                            <AuthenticatedRoute path="/createEvent" component={CreateEventModal}/>
+                            <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
+                            <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
+                        </Switch>
+                        <Footer> Created by Jack Kelly | Jono Diver | Luke Shushter | Milindi Kodikara | Sheryl Mantik of
+                            Group 33!</Footer>
+                    </Layout>
+                </Router>
+                );
+                }
+
+                export default App;
