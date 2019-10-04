@@ -9,19 +9,28 @@ import org.junit.*;
 import static org.junit.Assert.assertEquals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import java.sql.*;
 
 public class JwtUserInMemoryTests {
 
+    Connection connection;
     JwtUserDetails mockUser;
     JwtInMemoryUserDetailsService mockService;
     Student mockStudent;
 
     @Before
+    public void setUpDatabase() throws SQLException {
+
+        this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/septfansdb","root", ""); 
+
+    }
+    
     public void setUp() throws Exception {
-        Long id = new Long(10001);
-        String username =  new String("sept");
-        String password = new String("$2a$12$fEIwUDFyxxpUDXDi8OJFcelho5eFF.5vEx9rQktPJYCJQrReEoRA6");
-        String role = new String("test role");
+
+        Long id = new Long(1);
+        String username =  new String("mockUser");
+        String password = new String("mockPass");
+        String role = new String("mockRole");
         
         this.mockService = new JwtInMemoryUserDetailsService();
         this.mockUser = new JwtUserDetails(id, username, password, role);
@@ -31,8 +40,17 @@ public class JwtUserInMemoryTests {
 
     @Test
     public void checkUsername() throws UsernameNotFoundException {
-        assertEquals(mockService.loadUserByUsername(mockStudent.getUsername()), this.mockUser);
+        if (this.mockStudent != null){
+            System.out.println(mockStudent.toString());
+            assertEquals(mockService.loadUserByUsername(mockStudent.getUsername()), this.mockUser);
+        } else {
+            System.out.println(mockUser.toString());
+        }
+    }
 
+    @After
+    public void closeDatabase() throws SQLException {
+        this.connection.close();
     }
 
 
