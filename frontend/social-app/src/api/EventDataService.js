@@ -22,4 +22,3 @@ class EventDataService {
 }
 
 export default new EventDataService()
-
