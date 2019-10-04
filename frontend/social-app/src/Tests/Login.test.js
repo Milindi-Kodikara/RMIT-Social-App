@@ -19,7 +19,7 @@ afterEach(() => {
 });
 
 describe("<LoginScreen/>", () => {
-    it('renders without crashing', () => {
+    it('Renders the page', () => {
         act(() => {
             render(<LoginComponent/>, container);
         });
