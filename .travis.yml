@@ -3,6 +3,7 @@ matrix:
     - language: java
       jdk: oraclejdk11
       service: mysql
+      dist: trusty
       env:
       # Make sure gcloud command is on our PATH and the App Engine SDK is in the Python path
       - GAEJAVAPATH=${HOME}/.cache/google_appengine PATH=$PATH:${HOME}/google-cloud-sdk/bin JAVAPATH=${JAVAPATH}:${GAEJAVAPATH} CLOUDSDK_CORE_DISABLE_PROMPTS=1
