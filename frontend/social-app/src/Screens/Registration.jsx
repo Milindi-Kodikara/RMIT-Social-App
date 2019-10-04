@@ -4,6 +4,9 @@ import Row from "antd/es/grid/row";
 import Col from "antd/es/grid/col";
 import AuthenticationService from './AuthenticationService.js'
 
+/*
+Testing page for registration for backend implementation
+ */
 class NormalRegistrationForm extends React.Component {
 
     constructor(props) {
@@ -29,8 +32,8 @@ class NormalRegistrationForm extends React.Component {
                         AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, response.data.token);
                         this.props.history.push("/feed");
                     }).catch((e) => {
-                        console.log('Error with registration!');
-                        console.error(e)
+                    console.log('Error with registration!');
+                    console.error(e)
                 })
             }
         });
@@ -43,7 +46,7 @@ class NormalRegistrationForm extends React.Component {
                 <Col span={8}></Col>
                 <Col span={8}>
                     <Form onSubmit={this.handleSubmit} className="registration-form" style={{marginTop: "100px"}}>
-                    <Form.Item>
+                        <Form.Item>
                             {getFieldDecorator('username', {
                                 rules: [{required: true, message: 'Please input your first name!'}],
                             })(

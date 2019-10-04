@@ -4,6 +4,10 @@ import {Link} from "react-router-dom";
 
 const {Meta} = Card;
 
+/*
+Component for one singular event item for which the skeleton is provided
+So as to display in the feed one by one
+ */
 interface EventItemProps {
     id: string;
     username: string,
@@ -45,7 +49,7 @@ export default class EventItem extends React.Component<EventItemProps, EventItem
                     actions={[
                         <p><Icon type="environment"/> {this.props.location}</p>,
                         <p><Icon type="clock-circle"/> {this.props.startTime.toLocaleString('en-GB', options)}</p>,
-                        //need to do the router stuff here properly
+                        //Proper routing will be added with the integration of the backend
                         <Link to={"eventDetails/".concat(this.props.id)}><Icon type="ellipsis"/></Link>,
                     ]}
                 >

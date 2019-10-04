@@ -2,6 +2,9 @@ import {Button, Form, Icon, Input, message, Modal, Radio, Upload} from "antd";
 import React from "react";
 import {DatePicker, TimePicker} from 'antd';
 
+/*
+ Component to create an event
+ */
 interface CreateEventModalProps {
     visible: boolean,
 
@@ -50,7 +53,7 @@ class CreateEventModal extends React.Component<CreateEventModalProps, {}> {
                         rules: [{required: true, message: 'Please input the name of the event!'}],
                     })(<Input/>)}
                 </Form.Item>
-                <Form.Item label="Desription">
+                <Form.Item label="Description">
                     {getFieldDecorator('description', {
                         rules: [{required: true, message: 'Please input the description of the event!'}],
                     })(<TextArea/>)}
@@ -82,11 +85,11 @@ class CreateEventModal extends React.Component<CreateEventModalProps, {}> {
                     {getFieldDecorator('img', {
                         rules: [{required: true, message: 'Please upload an image for the event!'}],
                     })(
-                    <Upload {...props}>
-                        <Button>
-                            <Icon type="upload"/>Upload Image
-                        </Button>
-                    </Upload>
+                        <Upload {...props}>
+                            <Button>
+                                <Icon type="upload"/>Upload Image
+                            </Button>
+                        </Upload>
                     )}
                 </Form.Item>
             </Form>

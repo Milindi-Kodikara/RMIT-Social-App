@@ -7,15 +7,17 @@ import Row from "antd/lib/grid/row";
 import Descriptions from "antd/lib/descriptions";
 import Button from "antd/lib/button";
 
+/*
+Screen for the displaying the details of a singular event
+ */
 interface EventDetailProps {
-    eventID:string,
+    eventID: string,
 }
 
 interface EventDetailState {
     registered: boolean;
 }
 
-//have to read the details from the database
 class EventDetail extends Component <EventDetailProps, EventDetailState> {
 
     constructor(props: EventDetailProps) {
@@ -38,6 +40,7 @@ class EventDetail extends Component <EventDetailProps, EventDetailState> {
 
         };
 
+        //Hardcoded event until backend integration
         let events = {
             id: 'abcde',
             eventDate: new Date(),
@@ -67,10 +70,10 @@ class EventDetail extends Component <EventDetailProps, EventDetailState> {
                                 <Meta title={events.name} description={events.description}/>
                             </Col>
                             <Col span={8}>
-                            <Button type="primary" block onClick={() => {
-                                this.setState({registered: !this.state.registered})
-                            }}>{this.state.registered ? " Cancel " : "Register"}
-                            </Button>
+                                <Button type="primary" block onClick={() => {
+                                    this.setState({registered: !this.state.registered})
+                                }}>{this.state.registered ? " Cancel " : "Register"}
+                                </Button>
                             </Col>
                         </Row>
                         <Descriptions title="Info" style={{marginTop: "50px"}}>
