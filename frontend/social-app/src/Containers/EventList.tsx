@@ -3,6 +3,7 @@ import EventItem from "../Components/EventItem";
 import EventDataService from '../api/EventDataService';
 
 interface EventListProps{
+
 }
 
 interface EventListState{

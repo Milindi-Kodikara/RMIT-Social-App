@@ -1,16 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import {Layout, Menu} from 'antd';
 import Button from "antd/lib/button";
 import Feed from "./Screens/Feed";
 import Search from "./Screens/Search";
+import Register from "./Screens/Register";
 import Calendar from "./Screens/Calendar";
-import Profile from "./Screens/Profile";
 import Login from "./Screens/Login";
-import CreateEvent from "./Containers/CreateEvent";
 import EventDetail from "./Screens/EventDetails";
 import AuthenticatedRoute from "./Screens/AuthenticatedRoute";
 import LogoutComponent from "./Screens/LogoutComponent";
+import {Modal, Form, Input, Radio} from 'antd';
+import CreateEventModal from "./Components/CreateEventModal";
+
 const {Header, Footer} = Layout;
 
 const App: React.FC = () => {

@@ -3,6 +3,7 @@ import * as React from "react";
 import Row from "antd/es/grid/row";
 import Col from "antd/es/grid/col";
 import AuthenticationService from './AuthenticationService.js'
+import {Link} from "react-router-dom";
 
 class NormalLoginForm extends React.Component {
 
@@ -13,6 +14,10 @@ class NormalLoginForm extends React.Component {
             username: '',
             password: ''
         }
+    }
+
+    register = e => {
+        this.props.history.push("/register");
     }
 
     handleSubmit = e => {
@@ -27,8 +32,8 @@ class NormalLoginForm extends React.Component {
                         console.log(response.data.token)
                         this.props.history.push("/feed");
                     }).catch((e) => {
-                        console.log('Error with login!');
-                        console.error(e)
+                    console.log('Error with login!');
+                    console.error(e)
                 })
             }
         });
@@ -63,13 +68,7 @@ class NormalLoginForm extends React.Component {
                             )}
                         </Form.Item>
                         <Form.Item>
-                            {getFieldDecorator('remember', {
-                                valuePropName: 'checked',
-                                initialValue: true,
-                            })(<Checkbox>Remember me</Checkbox>)}
-                            <a className="login-form-forgot" href="">
-                                Forgot password
-                            </a> Or <a href="">register now!</a>
+                            <a href="/register" onClick={this.register}>Register now!</a>
                         </Form.Item>
                         <Form.Item>
                             <div style={{alignItems: "center"}}>
