@@ -71,11 +71,14 @@ class App extends Component {
                             <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                         </Switch>
-                        <Footer> Created by Jack Kelly | Jono Diver | Luke Shushter | Milindi Kodikara | Sheryl Mantik of
+                        <Footer> Created by Jack Kelly | Jono Diver | Luke Shushter | Milindi Kodikara | Sheryl Mantik
+                            of
                             Group 33!</Footer>
                     </Layout>
                 </Router>
-                );
-                }
+            </div>
+        );
+    }
+}
 
-                export default App;
+export default App;
