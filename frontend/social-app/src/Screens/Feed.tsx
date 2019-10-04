@@ -4,7 +4,9 @@ import EventList from "../Containers/EventList";
 import Profile from "../Containers/Profile";
 import Col from "antd/es/grid/col";
 import Row from "antd/lib/grid/row";
-
+/*
+Screen for the main feed
+ */
 const {Sider, Content} = Layout;
 const Feed: React.FC = () => {
     return (

@@ -7,8 +7,9 @@ import {
 import Col from "antd/es/grid/col";
 import Row from "antd/es/grid/row";
 
-console.log('Error with reg!');
-
+/*
+Screen to register a user for the application
+ */
 class Register extends React.Component {
 
     constructor(props) {
