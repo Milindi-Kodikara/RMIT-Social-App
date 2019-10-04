@@ -4,7 +4,6 @@ import {Layout, Menu} from 'antd';
 import Button from "antd/lib/button";
 import Feed from "./Screens/Feed";
 import Search from "./Screens/Search";
-import Register from "./Screens/Register";
 import Calendar from "./Screens/Calendar";
 import Login from "./Screens/Login";
 import EventDetail from "./Screens/EventDetails";
@@ -12,6 +11,7 @@ import AuthenticatedRoute from "./Screens/AuthenticatedRoute";
 import LogoutComponent from "./Screens/LogoutComponent";
 import {Modal, Form, Input, Radio} from 'antd';
 import CreateEventModal from "./Components/CreateEventModal";
+import Profile from "./Containers/Profile";
 
 const {Header, Footer} = Layout;
 
@@ -41,7 +41,7 @@ const App: React.FC = () => {
                 <AuthenticatedRoute path="/search" component={Search}/>
                 <AuthenticatedRoute path="/calendar" component={Calendar}/>
                 <AuthenticatedRoute path="/profile" component={Profile}/>
-                <AuthenticatedRoute path="/createEvent" component={CreateEvent}/>
+                <AuthenticatedRoute path="/createEvent" component={CreateEventModal}/>
                 <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
                 <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
             </Switch>
