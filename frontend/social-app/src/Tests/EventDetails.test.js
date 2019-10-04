@@ -2,7 +2,7 @@ import React from 'react';
 import {render, unmountComponentAtNode} from "react-dom";
 import {act} from "react-dom/test-utils";
 import {shallow, mount} from "enzyme";
-import LogoutComponent from "../Screens/LogoutComponent";
+import EventDetail from "../Screens/EventDetails";
 
 let container = null;
 
@@ -19,6 +19,11 @@ afterEach(() => {
     container = null;
 });
 
-describe("<LogoutComponent/>", () => {
-    expect(false).toBeFalsy();
+describe("<EventDetail/>", () => {
+    it('Renders the modal', () => {
+        act(() => {
+            render(<EventDetail/>, container);
+        });
+        expect(container).toMatchSnapshot();
+    });
 });
