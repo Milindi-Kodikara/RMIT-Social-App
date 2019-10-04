@@ -4,6 +4,12 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import java.sql.*;
 
+
+/* Before running the test,
+an open connection to the database
+in the Google Cloud via proxy is needed */
+
+
 public class DatabaseConnectionTest {
 
     Connection connection;
@@ -21,10 +27,6 @@ public class DatabaseConnectionTest {
         this.connection = DriverManager.getConnection(url, username, password);
 
     }
-
-    // Before running the test,
-    // an open connection to the database
-    // in the Google Cloud via proxy is needed
     
     @Test
     public void checkConnection() throws SQLException {
