@@ -1,5 +1,5 @@
 // import {CreateEvent} from '../Containers/CreateEvent'
-// import { shallow } from 'enzyme';
+// import { shallow } from '../setupEnzyme';
 
 
 test('false test', () =>{
