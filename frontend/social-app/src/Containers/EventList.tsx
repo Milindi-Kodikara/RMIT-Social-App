@@ -48,30 +48,6 @@ class EventList extends Component<EventListProps, EventListState> {
     }
 
     render() {
-
-        // const {isLoading, events} = this.state
-
-        // return (<div>
-        //         {!isLoading ? (
-        //             events.map((event) =>
-        //                 <EventItem
-        //                     key={event.id}
-        //                     id={event.id}
-        //                     username={event.username}
-        //                     name={event.name}
-        //                     image={<img className="image" src={event.imgURL}/>}
-        //                     location={event.location}
-        //                     startTime={event.startTime}
-        //                     finishTime={event.finishTime}
-        //                     organiser={event.organiser}
-        //                     description={event.description}
-        //                     imgURL={event.imgURL}
-        //                     colour={"#FF0001"}
-        //                     //clubName={"TPC"}
-        //                 />)) : <p>Loading ...</p>}
-
-        //     </div>
-        // )
         
         const organisers = {
             tpc: 'The Programming Club',
