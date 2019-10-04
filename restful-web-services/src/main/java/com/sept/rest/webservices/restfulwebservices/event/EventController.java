@@ -25,12 +25,12 @@ public class EventController {
 	@Autowired
 	private EventRepository eventRepo;
 
-	
+
 	@GetMapping("/{username}/events")
 	public List<Event> getAllEventsForStudent(@PathVariable String username){
 		return eventRepo.findByUsername(username);
 	}
-	
+
 	@GetMapping("/events")
 	public List<Event> getAllEvents(){
 		List<Event> eventsList = new ArrayList<>();
@@ -38,7 +38,7 @@ public class EventController {
 	    for (Event event : eventIterator) {
 	        eventsList.add(event);
 	    }
-		
+
 		return eventsList;
 	}
 
@@ -48,38 +48,38 @@ public class EventController {
 	}
 
 	@DeleteMapping("/{username}/events/{id}")
-	public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) {
+	public ResponseEntity<Void> deleteEvent(@PathVariable String username, @PathVariable long id) {
 
 		eventRepo.deleteById((int) id);
 
 		return ResponseEntity.noContent().build();
 	}
-	
+
 
 	@PutMapping("/{username}/events/{id}")
 	public ResponseEntity<Event> updateEvent(
 			@PathVariable String username,
 			@PathVariable long id, @RequestBody Event event){
-		
+
 		event.setUsername(username);
-		
+
 		Event eventUpdated = eventRepo.save(event);
-		
+
 		return new ResponseEntity<Event>(event, HttpStatus.OK);
 	}
-	
+
 	@PostMapping("/{username}/events")
 	public ResponseEntity<Void> createEvent(
 			@PathVariable String username, @RequestBody Event event){
-		
+
 		event.setUsername(username);
-		
+
 		Event createdEvent = eventRepo.save(event);
 
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(createdEvent.getId()).toUri();
-		
+
 		return ResponseEntity.created(uri).build();
 	}
-		
+
 }

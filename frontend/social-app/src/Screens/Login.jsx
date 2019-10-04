@@ -31,7 +31,6 @@ class NormalLoginForm extends React.Component {
                     .executeJwtAuthenticationService(values.username, values.password)
                     .then((response) => {
                         AuthenticationService.registerSuccessfulLoginForJwt(values.username, response.data.token);
-                        console.log(response.data.token)
                         this.props.history.push("/feed");
                     }).catch((e) => {
                     console.log('Error with login!');
