@@ -18,7 +18,7 @@ afterEach(() => {
     container = null;
 });
 
-describe("<LoginScreen/>", () => {
+describe("<LoginComponent/>", () => {
     it('Renders the page', () => {
         act(() => {
             render(<LoginComponent/>, container);
