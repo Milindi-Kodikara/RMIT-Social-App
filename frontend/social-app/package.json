@@ -48,6 +48,7 @@
     "ts-jest": "^24.1.0"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "preset": "ts-jest"
   }
 }
