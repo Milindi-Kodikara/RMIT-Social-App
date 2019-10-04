@@ -62,7 +62,7 @@ class App extends Component {
                         </Header>
                         <Switch>
                             <Route path="/" exact component={Login}/>
-                            <AuthenticatedRoute path="/events" component={Feed}/>
+                            <AuthenticatedRoute path="/feed" component={Feed}/>
                             <AuthenticatedRoute path="/login" component={Login}/>
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/calendar" component={Calendar}/>
