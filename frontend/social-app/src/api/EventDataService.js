@@ -6,8 +6,7 @@ class EventDataService {
 
     showAllEvents(){
         //console.log('executed service')
-        AuthenticationService.isUserLoggedIn();
-        return axios.get("http://localhost:4200/events");
+        return axios.get("http://localhost:8080/events");
     }
 
     // showEvent(id) {
