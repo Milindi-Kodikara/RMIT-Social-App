@@ -1,2 +1,3 @@
 com/sept/rest/webservices/restfulwebservices/RestfulWebServicesApplicationTests.class
+com/sept/rest/webservices/restfulwebservices/event/EventRepositoryTests.class
 com/sept/rest/webservices/restfulwebservices/login/StudentRepositoryTests.class
