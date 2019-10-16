@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ErrorComponent() {
-    return <div>An Error Occurred. I don't know what to do! Contact support at abcd-efgh-ijkl</div>
+    return <div>An error has occured! Ermagawds :3 please contact the supreme overloads of this website!!!!!</div>
 }
 
 export default ErrorComponent

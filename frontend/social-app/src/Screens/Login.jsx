@@ -3,8 +3,10 @@ import * as React from "react";
 import Row from "antd/es/grid/row";
 import Col from "antd/es/grid/col";
 import AuthenticationService from './AuthenticationService.js'
-import {Link} from "react-router-dom";
 
+/*
+Screen for the login page
+ */
 class NormalLoginForm extends React.Component {
 
     constructor(props) {

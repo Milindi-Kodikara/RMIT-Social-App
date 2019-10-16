@@ -3,6 +3,10 @@ import {Avatar, Card, Icon, Skeleton} from "antd";
 import Meta from "antd/lib/card/Meta";
 import Descriptions from "antd/lib/descriptions";
 
+/*
+Container for the profile of a user
+To show their registered events and their details
+ */
 interface ProfileOverviewProps {
 }
 
@@ -18,11 +22,12 @@ class Profile extends Component <ProfileOverviewProps, ProfileOverviewState> {
 
     render() {
 
-        //dummy profile, need to read in from the backend
+        //Hardcoded data, until the backend is integrated
         let profile = {
             id: 'abcde',
             name: 'Wombat da sok',
             description: 'I love going to events',
+            //Image sourced from SportsLinkt
             imageURL: 'https://sportslinkt-images.s3-ap-southeast-2.amazonaws.com/profile_410_600.jpg'
         };
 
@@ -37,7 +42,7 @@ class Profile extends Component <ProfileOverviewProps, ProfileOverviewState> {
             >
 
                 <Meta title={profile.name.toUpperCase()}/>
-                <Meta description={profile.description} />
+                <Meta description={profile.description}/>
 
                 <Descriptions style={{marginTop: "10px"}} title="Registered Events">
                     {/*Call this function in a loop to display all the registered events*/}

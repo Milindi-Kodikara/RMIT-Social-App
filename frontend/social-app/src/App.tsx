@@ -4,7 +4,6 @@ import {Layout, Menu} from 'antd';
 import Button from "antd/lib/button";
 import Feed from "./Screens/Feed";
 import Search from "./Screens/Search";
-import Register from "./Screens/Register";
 import Calendar from "./Screens/Calendar";
 import Login from "./Screens/Login";
 import EventDetail from "./Screens/EventDetails";
@@ -12,6 +11,7 @@ import AuthenticatedRoute from "./Screens/AuthenticatedRoute";
 import LogoutComponent from "./Screens/LogoutComponent";
 import {Modal, Form, Input, Radio} from 'antd';
 import CreateEventModal from "./Components/CreateEventModal";
+import Profile from "./Containers/Profile";
 
 const {Header, Footer} = Layout;
 
@@ -39,6 +39,7 @@ class App extends Component {
     render() {
         return (
             <div>
+
                 <CreateEventModal visible={this.state.visible} handleCreate={this.handleCreate}
                                   handleCancel={this.handleCancel}/>
                 <Router>
@@ -47,7 +48,6 @@ class App extends Component {
                             <Menu
                                 theme="dark"
                                 mode="horizontal"
-                                // defaultSelectedKeys={['1']}
                             >
                                 <Menu.Item key="1"><Link to={"/feed"}>Feed</Link></Menu.Item>
                                 <Menu.Item key="2"><Link to={"/search"}>Search</Link></Menu.Item>
@@ -66,11 +66,13 @@ class App extends Component {
                             <AuthenticatedRoute path="/login" component={Login}/>
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/calendar" component={Calendar}/>
+                            <AuthenticatedRoute path="/profile" component={Profile}/>
+                            <AuthenticatedRoute path="/createEvent" component={CreateEventModal}/>
                             <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
-                            <AuthenticatedRoute path="/register" component={Register}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                         </Switch>
-                        <Footer> Created by Jack Kelly | Jono Diver | Luke Shuster | Milindi Kodikara | Sheryl Mantik of
+                        <Footer> Created by Jack Kelly | Jono Diver | Luke Shushter | Milindi Kodikara | Sheryl Mantik
+                            of
                             Group 33!</Footer>
                     </Layout>
                 </Router>
