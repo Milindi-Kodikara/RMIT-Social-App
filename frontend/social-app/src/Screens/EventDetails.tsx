@@ -55,7 +55,7 @@ class EventDetail extends Component <EventDetailProps, EventDetailState> {
     }
 
     componentDidMount() {
-        console.log("test")
+        console.log(this.state.eventID)
         EventDataService.showEvent(this.state.eventID)
             .then(
                 response => {
@@ -67,7 +67,7 @@ class EventDetail extends Component <EventDetailProps, EventDetailState> {
     }
 
     render() {
-
+        console.log(this.state.event)
         const {isLoading, event} = this.state
 
         let options = {
@@ -80,19 +80,6 @@ class EventDetail extends Component <EventDetailProps, EventDetailState> {
             hour12: true
 
         };
-
-        // //Hardcoded event until backend integration
-        // let events = {
-        //     id: 'abcde',
-        //     eventDate: new Date(),
-        //     start: new Date(),
-        //     end: new Date(),
-        //     name: 'Intro to SE ',
-        //     location: '80.5.10',
-        //     organiser: 'bloop',
-        //     description: 'Softwares are cool . . apparently',
-        //     imageURL: 'https://sportslinkt-images.s3-ap-southeast-2.amazonaws.com/profile_410_600.jpg'
-        // };
 
         let div = (
             <Row>
