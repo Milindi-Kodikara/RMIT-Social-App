@@ -15,7 +15,7 @@ interface EventItemProps {
     image: object,
     location: string;
     startTime: Date;
-    finishTime: Date;
+    endTime: Date;
     organiser: string;
     description: string;
     imgURL: string,
