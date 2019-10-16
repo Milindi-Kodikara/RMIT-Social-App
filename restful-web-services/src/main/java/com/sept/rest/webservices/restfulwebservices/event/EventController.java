@@ -42,6 +42,11 @@ public class EventController {
 		return eventsList;
 	}
 
+	@GetMapping("/events/{id}")
+	public Event getEvent(@PathVariable long id){
+		return eventRepo.findById(id);
+	}
+
 	@PostMapping("/events")
 	public Event createEvent(@RequestBody Event event){
 	// public ResponseEntity<Void> createEvent(

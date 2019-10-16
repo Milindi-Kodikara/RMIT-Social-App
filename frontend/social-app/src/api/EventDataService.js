@@ -9,10 +9,10 @@ class EventDataService {
         return axios.get("http://localhost:8080/events");
     }
 
-    // showEvent(id) {
-    //     //console.log('executed service')
-    //     return axios.get("http://localhost:8080/feed/${id}");
-    // }
+    showEvent(id) {
+        //console.log('executed service')
+        return axios.get("http://localhost:8080/events/${id}");
+    }
 
     // deleteEvent(id) {
     //     console.log('executed service')
