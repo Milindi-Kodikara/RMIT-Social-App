@@ -3,6 +3,5 @@ package com.sept.rest.webservices.restfulwebservices.login;
 import org.springframework.data.repository.CrudRepository;
 
 public interface StudentRepository extends CrudRepository<Student, Integer> {
-	Student findById(long id);
 	Student findByUsername(String username);
 }

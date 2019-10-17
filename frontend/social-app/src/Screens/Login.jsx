@@ -3,17 +3,14 @@ import * as React from "react";
 import Row from "antd/es/grid/row";
 import Col from "antd/es/grid/col";
 import AuthenticationService from './AuthenticationService.js'
-import axios from 'axios'
 
 /*
 Screen for the login page
  */
-
 class NormalLoginForm extends React.Component {
 
-    // now takes 'usernameCallback(id: string): void' as prop
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             username: '',
@@ -34,10 +31,6 @@ class NormalLoginForm extends React.Component {
                     .executeJwtAuthenticationService(values.username, values.password)
                     .then((response) => {
                         AuthenticationService.registerSuccessfulLoginForJwt(values.username, response.data.token);
-                        //get the id of the given user
-                        axios.get("http://localhost:8080/students/${values.username}").then((res) => {
-                            res.data.id
-                        });
                         this.props.history.push("/feed");
                     }).catch((e) => {
                     console.log('Error with login!');

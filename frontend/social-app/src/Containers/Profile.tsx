@@ -2,55 +2,34 @@ import React, {Component} from 'react';
 import {Avatar, Card, Icon, Skeleton} from "antd";
 import Meta from "antd/lib/card/Meta";
 import Descriptions from "antd/lib/descriptions";
-import ProfileDataService from "../api/ProfileDataService";
 
 /*
 Container for the profile of a user
 To show their registered events and their details
  */
 interface ProfileOverviewProps {
-    id: string
 }
 
 interface ProfileOverviewState {
-    profile: {
-        username: string,
-        aboutMe: string,
-        imageURL: string
-    };
-    isLoading: boolean;
 }
 
+//have to read the details from the database
 class Profile extends Component <ProfileOverviewProps, ProfileOverviewState> {
 
     constructor(props: ProfileOverviewProps) {
         super(props);
-        this.state = {
-            profile: {
-                username: '',
-                aboutMe: '',
-                imageURL: ''
-            },
-            isLoading: true,
-        }
     }
-
-    componentDidMount(): void {
-        console.log("Profile is getting loaded")
-        ProfileDataService.showProfile(this.props.id)
-            .then(
-                response => {
-                    this.setState({profile: response.data, isLoading: false})
-                    console.log(response.data)
-                }
-            )
-        console.log(this.state.profile)
-    }
-
 
     render() {
 
-        const {isLoading, profile} = this.state
+        //Hardcoded data, until the backend is integrated
+        let profile = {
+            id: 'abcde',
+            name: 'Wombat da sok',
+            description: 'I love going to events',
+            //Image sourced from SportsLinkt
+            imageURL: 'https://sportslinkt-images.s3-ap-southeast-2.amazonaws.com/profile_410_600.jpg'
+        };
 
         let div = (
             <Card
@@ -62,8 +41,8 @@ class Profile extends Component <ProfileOverviewProps, ProfileOverviewState> {
                 </div>}
             >
 
-                <Meta title={profile.username.toUpperCase()}/>
-                <Meta description={profile.aboutMe}/>
+                <Meta title={profile.name.toUpperCase()}/>
+                <Meta description={profile.description}/>
 
                 <Descriptions style={{marginTop: "10px"}} title="Registered Events">
                     {/*Call this function in a loop to display all the registered events*/}
