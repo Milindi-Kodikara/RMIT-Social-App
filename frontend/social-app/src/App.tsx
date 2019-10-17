@@ -19,6 +19,7 @@ class App extends Component {
 
     state = {
         visible: false,
+        id: ''
     };
 
     showModal = () => {
@@ -37,6 +38,7 @@ class App extends Component {
     };
 
     render() {
+
         return (
             <div>
 
@@ -63,10 +65,18 @@ class App extends Component {
                         <Switch>
                             <Route path="/" exact component={Login}/>
                             <AuthenticatedRoute path="/feed" component={Feed}/>
-                            <AuthenticatedRoute path="/login" component={Login}/>
+                            // Get the user id from login
+
+                            <AuthenticatedRoute path="/login"
+                                // @ts-ignore
+                                                component={() => <Login usernameCallback={(id: string) => {
+                                                    this.state.id = id
+                                                }}/>}/>
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/calendar" component={Calendar}/>
-                            <AuthenticatedRoute path="/profile" component={Profile}/>
+                            //Send the user id to profile
+                            // @ts-ignore
+                            <AuthenticatedRoute path="/profile" component={() => <Profile id={this.state.id}/>}/>
                             <AuthenticatedRoute path="/createEvent" component={CreateEventModal}/>
                             <AuthenticatedRoute path="/eventDetails" component={EventDetail}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>

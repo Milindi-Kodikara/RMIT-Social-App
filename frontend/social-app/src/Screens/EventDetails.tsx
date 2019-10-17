@@ -81,19 +81,6 @@ class EventDetail extends Component <EventDetailProps, EventDetailState> {
 
         };
 
-        // //Hardcoded event until backend integration
-        // let events = {
-        //     id: 'abcde',
-        //     eventDate: new Date(),
-        //     start: new Date(),
-        //     end: new Date(),
-        //     name: 'Intro to SE ',
-        //     location: '80.5.10',
-        //     organiser: 'bloop',
-        //     description: 'Softwares are cool . . apparently',
-        //     imageURL: 'https://sportslinkt-images.s3-ap-southeast-2.amazonaws.com/profile_410_600.jpg'
-        // };
-
         let div = (
             <Row>
                 <Col span={4}></Col>
