@@ -36,7 +36,7 @@ class NormalLoginForm extends React.Component {
                         AuthenticationService.registerSuccessfulLoginForJwt(values.username, response.data.token);
                         //get the id of the given user
                         axios.get("http://localhost:8080/students/${values.username}").then((res) => {
-                            res.data.id
+                           this.props.usernameCallback(res.data.id);
                         });
                         this.props.history.push("/feed");
                     }).catch((e) => {

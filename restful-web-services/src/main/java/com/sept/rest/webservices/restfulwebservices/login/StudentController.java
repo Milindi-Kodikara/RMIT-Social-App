@@ -28,6 +28,12 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepo;
 
+    //get id when username is given
+    @GetMapping("/students/{username}")
+    public long getStudentId(@PathVariable String username){
+        return studentRepo.findByUsername(username).getId();
+    }
+
     //get a single profile depending on the user id
     @GetMapping("/students/{id}")
     public Student getStudent(@PathVariable long id){

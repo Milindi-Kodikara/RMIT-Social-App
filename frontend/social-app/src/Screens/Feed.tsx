@@ -8,12 +8,16 @@ import Row from "antd/lib/grid/row";
 Screen for the main feed
  */
 const {Sider, Content} = Layout;
-const Feed: React.FC = () => {
+interface Props{
+    id: string
+}
+const Feed: React.FC<Props> = (props: Props) => {
+
     return (
         <Row>
             <Layout>
                 <Col span={8} style={{background: "#bec2cb"}}>
-                    <Sider style={{background: "#bec2cb", margin: "25px"}}><Profile/></Sider>
+                    <Sider style={{background: "#bec2cb", margin: "25px"}}><Profile id={props.id}/></Sider>
                 </Col>
                 <Col span={16} style={{background: "#bec2cb"}}>
                     <Content style={{background: "#bec2cb"}}><EventList/></Content>

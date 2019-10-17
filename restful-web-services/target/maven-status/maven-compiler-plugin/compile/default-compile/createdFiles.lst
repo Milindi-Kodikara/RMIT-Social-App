@@ -10,6 +10,7 @@ com/sept/rest/basic/auth/BasicAuthenticationController.class
 com/sept/rest/basic/auth/SpringSecurityConfigurationBasicAuth.class
 com/sept/rest/webservices/restfulwebservices/jwt/JwtTokenUtil.class
 com/sept/rest/webservices/restfulwebservices/todo/TodoJpaRepository.class
+com/sept/rest/webservices/restfulwebservices/login/StudentController.class
 com/sept/rest/basic/auth/AuthenticationBean.class
 com/sept/rest/webservices/restfulwebservices/jwt/JwtInMemoryUserDetailsService.class
 com/sept/rest/webservices/restfulwebservices/todo/TodoHardcodedService.class

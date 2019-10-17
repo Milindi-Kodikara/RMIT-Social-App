@@ -64,13 +64,14 @@ class App extends Component {
                         </Header>
                         <Switch>
                             <Route path="/" exact component={Login}/>
-                            <AuthenticatedRoute path="/feed" component={Feed}/>
+                             // @ts-ignore
+                            <AuthenticatedRoute path="/feed" component={() => <Feed id={this.state.id}/>}/>
                             // Get the user id from login
 
                             <AuthenticatedRoute path="/login"
                                 // @ts-ignore
                                                 component={() => <Login usernameCallback={(id: string) => {
-                                                    this.state.id = id
+                                                    this.setState({id});
                                                 }}/>}/>
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/calendar" component={Calendar}/>
