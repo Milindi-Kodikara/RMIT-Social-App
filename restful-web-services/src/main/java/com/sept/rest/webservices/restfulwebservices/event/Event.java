@@ -7,8 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
+/*
+Create table for events
+ */
 @Entity
 @Table(name = "events")
 public class Event {
