@@ -6,8 +6,10 @@ class ProfileDataService {
 
     //Show the profile of the user
     showProfile(id) {
-        return axios.get("http://localhost:8080/students/${id}");
+        return axios.get(`http://localhost:8080/students/${id}`);
     }
+
+
 }
 
 export default new ProfileDataService()

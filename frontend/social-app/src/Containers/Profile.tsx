@@ -37,6 +37,7 @@ class Profile extends Component <ProfileOverviewProps, ProfileOverviewState> {
 
     componentDidMount(): void {
         console.log("Profile is getting loaded")
+        console.log(this.props.id)
         ProfileDataService.showProfile(this.props.id)
             .then(
                 response => {

@@ -29,7 +29,7 @@ public class StudentController {
     private StudentRepository studentRepo;
 
     //get id when username is given
-    @GetMapping("/students/{username}")
+    @GetMapping("/students/login/{username}")
     public long getStudentId(@PathVariable String username){
         return studentRepo.findByUsername(username).getId();
     }

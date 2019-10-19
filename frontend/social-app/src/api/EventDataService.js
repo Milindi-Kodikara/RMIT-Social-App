@@ -6,12 +6,12 @@ class EventDataService {
 
     showAllEvents(){
         //console.log('executed service')
-        return axios.get("http://localhost:8080/events");
+        return axios.get(`http://localhost:8080/events`);
     }
 
     showEvent(id) {
         //console.log('executed service')
-        return axios.get("http://localhost:8080/events/${id}");
+        return axios.get(`http://localhost:8080/events/${id}`);
     }
 
     // deleteEvent(id) {
