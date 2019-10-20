@@ -50,4 +50,58 @@ public class EventRepositoryTests {
         /* Then */
         Assert.assertEquals(testEvents, eventList);
     }
+
+    @Test
+    public void removeEvent(){
+        //given
+        Event event1 = new Event();
+        event1.setName("event 1");
+        event1.setUsername(student.getUsername());
+        entityManager.persist(event1);
+        //when
+        entityManager.remove(event1);
+        //then
+        Assert.assertEquals(entityManager.find(event1), false)
+
+    }
+
+    @Test
+    public void testEventLocation(){
+        //given
+        Event event = new Event();
+        //when
+        event.setLocation("Location");
+        //then
+        Assert.assertEquals(event.getLocation(), "Location")
+    }
+
+    @Test
+    public void testEventStartTime(){
+        //given
+        Event event = new Event();
+        //when
+        event.setStartTime("starttime");
+        //then
+        Assert.assertEquals(event.getStartTime(), "starttime")
+    }
+
+    @Test
+    public void testEventEndTime(){
+        //given
+        Event event = new Event();
+        //when
+        event.setEndTime("endtime");
+        //then
+        Assert.assertEquals(event.getEndTime(), "endtime")
+    }
+
+    @Test
+    public void testEventImgURL(){
+        //given
+        Event event = new Event();
+        //when
+        event.setImgURL("eventTestURL");
+        //then
+        Assert.assertEquals(event.getImgURL(), "eventTestURL")
+    }
 }
