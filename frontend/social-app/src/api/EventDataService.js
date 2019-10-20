@@ -6,7 +6,6 @@ import { interfaceDeclaration } from '@babel/types';
 class EventDataService {
 
     showAllEvents(){
-        //console.log('executed service')
         return axios.get(`http://localhost:8080/events`);
     }
 
@@ -16,7 +15,7 @@ class EventDataService {
     }
 
     createEvent(){
-        return axios.put(`http://localhost:8080/events`);
+        return axios.post(`http://localhost:8080/events`);
     }
 }
 

@@ -26,8 +26,10 @@ class Register extends React.Component {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-                //ask the user to login
                 this.props.history.push("/login");
+                axios.post('http://localhost:8080/students', {
+                    body: values
+                })
             }
         });
     };
