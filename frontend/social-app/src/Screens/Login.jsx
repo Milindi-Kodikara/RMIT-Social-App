@@ -14,7 +14,8 @@ class NormalLoginForm extends React.Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            id: ''
         }
     }
 
@@ -22,7 +23,12 @@ class NormalLoginForm extends React.Component {
         this.props.history.push("/register");
     }
 
+    sendData = () => {
+         this.props.usernameCallback(this.state.id);
+    }
+
     handleSubmit = e => {
+        console.log("SUBMITTING PROFILE")
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
@@ -31,6 +37,11 @@ class NormalLoginForm extends React.Component {
                     .executeJwtAuthenticationService(values.username, values.password)
                     .then((response) => {
                         AuthenticationService.registerSuccessfulLoginForJwt(values.username, response.data.token);
+                        //get the id of the given user
+                        axios.get(`http://localhost:8080/students/login/${values.username}`).then((res) => {
+                            this.props.usernameCallback = res.data.id
+                           console.log(res.data.id)
+                        });
                         this.props.history.push("/feed");
                     }).catch((e) => {
                     console.log('Error with login!');

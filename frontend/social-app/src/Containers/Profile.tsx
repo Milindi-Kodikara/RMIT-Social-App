@@ -20,6 +20,20 @@ class Profile extends Component <ProfileOverviewProps, ProfileOverviewState> {
         super(props);
     }
 
+    componentDidMount(): void {
+        console.log("Profile is getting loaded")
+        console.log(this.props.id)
+        ProfileDataService.showProfile(this.props.id)
+            .then(
+                response => {
+                    this.setState({profile: response.data, isLoading: false})
+                    console.log(response.data)
+                }
+            )
+        console.log(this.state.profile)
+    }
+
+
     render() {
 
         //Hardcoded data, until the backend is integrated
