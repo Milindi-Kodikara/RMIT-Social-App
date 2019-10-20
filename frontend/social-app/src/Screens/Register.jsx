@@ -18,11 +18,6 @@ class Register extends React.Component {
         this.state = {
             confirmDirty: false,
             autoCompleteResult: [],
-            username: '',
-            password: '',
-            about_me: '',
-            email: '',
-            imgurl: ''
         }
     }
 
