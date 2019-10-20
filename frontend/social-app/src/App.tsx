@@ -19,7 +19,7 @@ class App extends Component {
 
     state = {
         visible: false,
-        id: ''
+        currUserId: ''
     };
 
     showModal = () => {
@@ -36,6 +36,10 @@ class App extends Component {
         // refresh page maybe to load events
         const event = {name, description, location, time, org, img};
     };
+
+    callbackUsernameFunc = (userId: string) => {
+        this.setState({currUserId: userId})
+    }
 
     render() {
 
@@ -65,14 +69,12 @@ class App extends Component {
                         <Switch>
                             <Route path="/" exact component={Login}/>
                              // @ts-ignore
-                            <AuthenticatedRoute path="/feed" component={() => <Feed id={this.state.id}/>}/>
+                            <AuthenticatedRoute path="/feed" component={() => <Feed usernameId ={this.state.currUserId}/>}/>
                             // Get the user id from login
 
                             <AuthenticatedRoute path="/login"
                                 // @ts-ignore
-                                                component={() => <Login usernameCallback={(id: string) => {
-                                                    this.setState({id});
-                                                }}/>}/>
+                                                component={() => <Login usernameCallback = {this.callbackUsernameFunc}/>}/>
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/calendar" component={Calendar}/>
                             //Send the user id to profile

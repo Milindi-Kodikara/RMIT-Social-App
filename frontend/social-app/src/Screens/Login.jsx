@@ -17,12 +17,17 @@ class NormalLoginForm extends React.Component {
 
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            id: ''
         }
     }
 
     register = e => {
         this.props.history.push("/register");
+    }
+
+    sendData = () => {
+         this.props.usernameCallback(this.state.id);
     }
 
     handleSubmit = e => {
@@ -37,7 +42,7 @@ class NormalLoginForm extends React.Component {
                         AuthenticationService.registerSuccessfulLoginForJwt(values.username, response.data.token);
                         //get the id of the given user
                         axios.get(`http://localhost:8080/students/login/${values.username}`).then((res) => {
-                           this.props.usernameCallback = res.data.id;
+                            this.props.usernameCallback = res.data.id
                            console.log(res.data.id)
                         });
                         this.props.history.push("/feed");
