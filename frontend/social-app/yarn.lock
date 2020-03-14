@@ -1261,6 +1261,28 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/cheerio@*":
+  version "0.22.16"
+  resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.22.16.tgz#c748a97b8a6f781b04bbda4a552e11b35bcc77e4"
+  integrity sha512-bSbnU/D4yzFdzLpp3+rcDj0aQQMIRUBNJU7azPxdqMpnexjUSvGJyDuOBQBHeOZh1mMKgsJm6Dy+LLh80Ew4tQ==
+  dependencies:
+    "@types/node" "*"
+
+"@types/enzyme-adapter-react-16@^1.0.5":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@types/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.0.6.tgz#8aca7ae2fd6c7137d869b6616e696d21bb8b0cec"
+  integrity sha512-VonDkZ15jzqDWL8mPFIQnnLtjwebuL9YnDkqeCDYnB4IVgwUm0mwKkqhrxLL6mb05xm7qqa3IE95m8CZE9imCg==
+  dependencies:
+    "@types/enzyme" "*"
+
+"@types/enzyme@*", "@types/enzyme@^3.10.3":
+  version "3.10.5"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.10.5.tgz#fe7eeba3550369eed20e7fb565bfb74eec44f1f0"
+  integrity sha512-R+phe509UuUYy9Tk0YlSbipRpfVtIzb/9BHn5pTEtjJTF5LXvUjrIQcZvNyANNEyFrd2YGs196PniNT1fgvOQA==
+  dependencies:
+    "@types/cheerio" "*"
+    "@types/react" "*"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -1612,9 +1634,9 @@ acorn-walk@^6.0.1:
   integrity sha512-7evsyfH1cLOCdAzZAd43Cic04yKydNx0cF+7tiA19p1XnLLPU4dpCQOqpjqwokFe//vS0QqfqqjCS2JkiIs0cA==
 
 acorn@^5.5.3:
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
-  integrity sha512-T/zvzYRfbVojPWahDsE5evJdHb3oJoQfFbsrKM7w5Zcs++Tr257tia3BmMP8XYVjp1S9RZXQMh7gao96BlqZOw==
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.4.tgz#3e8d8a9947d0599a1796d10225d7432f4a4acf5e"
+  integrity sha512-1D++VG7BhrtvQpNbBzovKNc1FLGGEE/oGe7b9xJm/RFHMBeUaUGpluV9RLjZa47YFdPcDAenEYuq9pQPcMdLJg==
 
 acorn@^6.0.1, acorn@^6.0.4, acorn@^6.2.1:
   version "6.3.0"
